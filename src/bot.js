@@ -1,6 +1,6 @@
 // extract discord bot token from environment variables
 require('dotenv').config();
-const{token} = process.env;
+const{TOKEN} = process.env;
 
 // import necessary modules and packages
 const {Client, Collection, GatewayIntentBits} = require('discord.js');
