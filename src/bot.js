@@ -30,7 +30,7 @@ for (const folder of functionFolders) {
 client.handleEvents();
 client.handleCommands();
 // log bot in
-client.login(token)
+client.login(TOKEN)
     .then(() => {
         console.log('Fit Pit Mountie is now connected to Discord.');
     })
