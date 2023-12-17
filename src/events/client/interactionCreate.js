@@ -18,6 +18,17 @@ module.exports = {
                     ephemeral: true
                 });
             }
+        } else if (interaction.isStringSelectMenu()) {
+            const { menus } = client;
+            const { customId } = interaction;
+            const menu = menus.get(customId);
+            if (!menu) return new Error('There was a error opening the menu...');
+
+            try{
+                await menu.execute(interaction, client);
+            }catch(error) {
+                console.error(error);
+            }
         }
-    }
+    },
 }

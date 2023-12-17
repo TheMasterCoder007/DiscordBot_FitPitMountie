@@ -10,9 +10,7 @@ const fs = require('fs');
 const client = new Client({intents: [GatewayIntentBits.Guilds]});
 client.commands = new Collection();
 client.commandArray = [];
-
-// create a collection to store the bots commands
-client.commands = new Collection();
+client.menus = new Collection();
 
 // dynamically load folders and files and pass client into all js files
 const functionFolders = fs.readdirSync(`./src/functions`);
@@ -29,6 +27,8 @@ for (const folder of functionFolders) {
 // call handler functions
 client.handleEvents();
 client.handleCommands();
+client.handleComponents();
+
 // log bot in
 client.login(TOKEN)
     .then(() => {
