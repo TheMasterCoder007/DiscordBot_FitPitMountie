@@ -23,8 +23,9 @@ module.exports = (client) => {
             }
         }
 
-        const clientID = '1182907301720498206';
-        const rest = new REST({version: '9'}).setToken(process.env.token);
+        // const clientID = '1182907301720498206';
+        const clientID = '1185845860068765717'; // testing bot
+        const rest = new REST({version: '9'}).setToken(process.env.TOKEN);
         try {
             console.log('Started refreshing application (/) commands.');
             await rest.put(Routes.applicationCommands(clientID), {
